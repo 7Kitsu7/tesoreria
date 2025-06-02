@@ -10,6 +10,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\PensionController;
 use App\Http\Controllers\PagoController;
+use App\Http\Controllers\ChatbotController;
 
 Route::get('/matricula/{CodigoMatricula}/pdf', [MatriculaController::class, 'generarPDF'])->name('matricula.generarPDF');
 
@@ -54,3 +55,6 @@ Route::get('cancelar5', function () {
 
 Route::get('/pago', [PagoController::class, 'index'])->name('pago.index');
 Route::resource('/pago', PagoController::class);
+
+//---------------------------------------------------------------
+Route::post('/preguntar', [ChatbotController::class, 'preguntar'])->name('preguntar');
